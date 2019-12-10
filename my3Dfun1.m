@@ -1,41 +1,42 @@
 %% my3Dfun1
 
-%%Function domain
+%% Function domain
 
-x = linspace(-2,2,100);
-y = linspace(-4,4,100);
-[X,Y] = meshgrid(x,y);
+X=-4:0.1:4;
+Y=-2:0.1:2;
+[x,y] = meshgrid(X,Y);
 
-%%Function values
+%% Function values
 
-Z = X.*exp(-X.^2 - Y.^2);
+z =x.*exp(-x.^2-y.^2);
 
-%%Figure initialization
+%% Figure initialization
 
-figure(1)
-    
-%%Plotting figure
+figure
 
-surf(X,Y,Z)
-    
-%%Title
+%% Plotting figure
 
-title('z_A = xexp(-x^2 -y^2)')
+surfc(x,y,z)
 
-%%Labels
+%% Title
 
-xlabel('x_A')
-ylabel('y_A')
-zlabel('z_A')
-    
-%%Grid
+title('z_B =x exp(-x^2-y^2);')
 
-grid on
-    
-%%Colormap
+%% Labels
 
-colormap('hot(200)')
-    
-%%Shading
+xlabel('x_B')
+ylabel('y_B')
+zlabel('z_B')
 
-shading('flat')
+%% Grid
+
+grid minor
+
+%% Colormap
+
+colormap cool
+
+%% Shading
+
+shading interp
+view(10,9)
