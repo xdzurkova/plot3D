@@ -34,7 +34,7 @@ grid minor
 
 %% Colormap
 
-colormap cool
+colormap hot
 
 %% Shading
 
